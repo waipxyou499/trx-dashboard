@@ -97,4 +97,4 @@ document.getElementById("zoomIn").onclick=()=>{state.zoom=Math.min(2,state.zoom+
 document.getElementById("zoomOut").onclick=()=>{state.zoom=Math.max(.5,state.zoom-.25);draw()};
 document.getElementById("reset").onclick=()=>{state.zoom=1;draw()};
 window.addEventListener("resize",draw);
-load();setInterval(load,5000);
+load();setInterval(load,60000);
