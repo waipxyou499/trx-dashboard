@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TRX Chart • BIG/SMALL Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">📈 <b>TRX Chart</b></div>
+    <div class="issue-box"><span>CURRENT ISSUE</span><b id="currentIssue">—</b></div>
+    <div class="issue-box"><span>NEXT ISSUE</span><b id="nextIssue">—</b></div>
+    <div class="live">● LIVE</div>
+  </header>
+
+  <main class="layout">
+    <section class="main">
+      <section class="stats">
+        <div><strong id="bigCount">0</strong><span>BIG (5–9)</span></div>
+        <div><strong id="smallCount">0</strong><span>SMALL (0–4)</span></div>
+        <div><strong id="streak">0</strong><span>STREAK</span></div>
+        <div><strong id="lastResult">—</strong><span>LAST</span></div>
+      </section>
+
+      <section class="chart-card">
+        <canvas id="chart"></canvas>
+      </section>
+
+      <div class="controls">
+        <button id="zoomIn">🔍 + Zoom In</button>
+        <button id="zoomOut">🔎 − Zoom Out</button>
+        <button id="reset">↻ Reset</button>
+      </div>
+
+      <section class="table-card">
+        <h3>Recent Blocks</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Issue</th><th>Last digit</th><th>Result</th><th>Time</th></tr></thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+
+    <aside class="side">
+      <div class="side-head">
+        <b>CYB3R ROOT</b><small>TRX Prediction Analysis</small>
+      </div>
+
+      <div class="prediction">
+        <small>Prediction for issue <b id="predIssue">—</b></small>
+        <div id="prediction" class="pred big">BIG</div>
+        <div class="confidence"><div id="confidenceBar"></div></div>
+        <p>Confidence: <b id="confidence">—</b></p>
+        <div class="reason" id="reason">Waiting for live block data…</div>
+      </div>
+
+      <div class="panel">
+        <h3>🕯 Candlestick Patterns</h3>
+        <div class="empty">No patterns detected</div>
+      </div>
+
+      <div class="panel">
+        <h3>📊 Prediction History</h3>
+        <div id="history"></div>
+      </div>
+    </aside>
+  </main>
+
+  <footer>Data source: TRONSCAN API • BIG/SMALL is a statistical display, not a guarantee of future results.</footer>
+  <script src="app.js"></script>
+</body>
+</html>
